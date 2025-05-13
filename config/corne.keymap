@@ -21,9 +21,10 @@
             compatible = "zmk,behavior-mod-tap";
             label = "LALT_TAB";
             bindings = <&kp LALT>, <&kp TAB>;
+
             #binding-cells = <0>;
             tapping-term-ms = <120>; 
-            // flavor = "tap-preferred"; // Or "hold-preferred"
+            flavor = "tap-preferred"; // Or "hold-preferred"
         };
 
         // LALT_T(KC_EQL) -> &mt LALT EQL
