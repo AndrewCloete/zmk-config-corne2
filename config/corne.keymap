@@ -15,55 +15,6 @@
 
 / {
     // Define behaviors for QMK LT/MT shortcuts for clarity
-    behaviors {
-        // LALT_T(KC_TAB) -> &mt LALT TAB
-        lt_lalttab: mod_tap_lalt_tab {
-            compatible = "zmk,behavior-mod-tap";
-            label = "LALT_TAB";
-            bindings = <&kp LALT>, <&kp TAB>;
-
-            #binding-cells = <0>;
-            tapping-term-ms = <120>; 
-            flavor = "tap-preferred"; // Or "hold-preferred"
-        };
-
-        // LALT_T(KC_EQL) -> &mt LALT EQL
-        lt_lalteql: mod_tap_lalt_eql {
-            compatible = "zmk,behavior-mod-tap";
-            label = "LALT_EQL";
-            bindings = <&kp LALT>, <&kp EQL>;
-            #binding-cells = <0>;
-            tapping-term-ms = <120>;
-        };
-
-        // LT(_NAV, KC_ESC) -> &lt NAV ESC
-        lt_navesc: layer_tap_nav_esc {
-            compatible = "zmk,behavior-layer-tap";
-            label = "NAV_ESC";
-            bindings = <&mo 3>, <&kp ESC>;
-            #binding-cells = <0>;
-            tapping-term-ms = <120>;
-        };
-
-        // LT(_NAV, KC_SCLN) -> &lt NAV SCLN
-        lt_navscln: layer_tap_nav_scln {
-            compatible = "zmk,behavior-layer-tap";
-            label = "NAV_SCLN";
-            bindings = <&mo 3>, <&kp SCLN>;
-            #binding-cells = <0>;
-            tapping-term-ms = <120>;
-        };
-
-        // LT(_SYMB, KC_BSLS) -> &lt SYMB BSLH
-        lt_symbbsls: layer_tap_symb_bsls {
-            compatible = "zmk,behavior-layer-tap";
-            label = "SYMB_BSLS";
-            bindings = <&mo 3>, <&kp BSLH>;
-            #binding-cells = <0>;
-            tapping-term-ms = <120>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap"; // Ensure this matches your board's compatible string if needed
 
@@ -78,9 +29,9 @@
             label = "QWERTY";
             bindings = <
     // Left Hand                                                             // Right Hand
-    &lt_lalttab  &kp Q        &kp W        &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O        &kp P        &lt_lalteql
-    &lt_navesc   &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt_navscln  &kp SQT    // SQT is ' (KC_QUOT)
-    &mo 2        &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt_symbbsls // FSLH is / (KC_SLSH)
+    &mt LALT TAB  &kp Q        &kp W        &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O        &kp P        &mt LALT EQL
+    &lt 3 ESC    &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt 3 SCLN  &kp SQT    // SQT is ' (KC_QUOT)
+    &mo 2        &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt 3 BSLH // FSLH is / (KC_SLSH)
                            &kp LCTRL    &kp LSHIFT   &kp LGUI                  &kp BSPC     &kp SPACE    &kp RET      // LGUI is Left Win/Cmd
             >;
         };
