@@ -26,6 +26,15 @@
             tapping-term-ms = <120>; 
             flavor = "tap-preferred"; // Or "hold-preferred"
         };
+        lt_lalttab: mod_tap_lalt_tab {
+            compatible = "zmk,behavior-mod-tap";
+            label = "LALT_TAB";
+            bindings = <&kp LALT>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            tapping-term-ms = <120>; 
+            flavor = "tap-preferred"; // Or "hold-preferred"
+        };
 
         // LALT_T(KC_EQL) -> &mt LALT EQL
         lt_lalteql: mod_tap_lalt_eql {
@@ -40,7 +49,7 @@
         lt_navesc: layer_tap_nav_esc {
             compatible = "zmk,behavior-layer-tap";
             label = "NAV_ESC";
-            bindings = <&mo NAV>, <&kp ESC>;
+            bindings = <&mo 3>, <&kp ESC>;
             #binding-cells = <0>;
             tapping-term-ms = <120>;
         };
@@ -49,7 +58,7 @@
         lt_navscln: layer_tap_nav_scln {
             compatible = "zmk,behavior-layer-tap";
             label = "NAV_SCLN";
-            bindings = <&mo NAV>, <&kp SCLN>;
+            bindings = <&mo 3>, <&kp SCLN>;
             #binding-cells = <0>;
             tapping-term-ms = <120>;
         };
@@ -58,7 +67,7 @@
         lt_symbbsls: layer_tap_symb_bsls {
             compatible = "zmk,behavior-layer-tap";
             label = "SYMB_BSLS";
-            bindings = <&mo SYMB>, <&kp BSLH>;
+            bindings = <&mo 3>, <&kp BSLH>;
             #binding-cells = <0>;
             tapping-term-ms = <120>;
         };
@@ -80,7 +89,7 @@
     // Left Hand                                                             // Right Hand
     &lt_lalttab  &kp Q        &kp W        &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O        &kp P        &lt_lalteql
     &lt_navesc   &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt_navscln  &kp SQT    // SQT is ' (KC_QUOT)
-    &mo SYMB     &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt_symbbsls // FSLH is / (KC_SLSH)
+    &mo 3        &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt_symbbsls // FSLH is / (KC_SLSH)
                            &kp LCTRL    &kp LSHIFT   &kp LGUI                  &kp BSPC     &kp SPACE    &kp RET      // LGUI is Left Win/Cmd
             >;
         };
@@ -102,7 +111,7 @@
     // Left Hand                                                             // Right Hand
     &trans       &kp F18      &uc 0x00F6   &uc 0x00EB   &kp AMPS     &kp UNDS     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
                             /* UCO1/ö */ /* UCE1/ë */ /* NOTE: QMK XP() behavior (tap/hold) not directly mapped */
-    &mo ADJUST   &kp AT       &trans       &mkp MOUSE_UP &trans       &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+    &mo 4   &kp AT       &trans       &mkp MOUSE_UP &trans       &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
     &trans       &kp F19      &mkp MOUSE_L &mkp MOUSE_D &mkp MOUSE_R &mkp MB2     &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
                            &trans       &trans       &trans                    &trans       &trans       &kp N0
             >;
@@ -114,7 +123,7 @@
     // Left Hand                                                             // Right Hand
     &to LOCK1    &kp C_WWW_BACK &kp C_WWW_FORWARD &kp LPAR   &kp RPAR     &trans       &kp HOME     &kp PGDN     &kp PGUP     &kp C_WWW_FAVORITES &kp END   &trans
     &trans       &kp LALT     &kp PSCRN    &kp LCBR      &kp RCBR      &kp UNDS     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &mkp MB3     &trans
-    &mo ADJUST   &trans       &kp DEL      &kp LBRC      &kp RBRC      &trans       &mkp SCROLL_LEFT &mkp SCROLL_DOWN &mkp SCROLL_UP &mkp SCROLL_RIGHT &trans &trans
+    &mo 4   &trans       &kp DEL      &kp LBRC      &kp RBRC      &trans       &mkp SCROLL_LEFT &mkp SCROLL_DOWN &mkp SCROLL_UP &mkp SCROLL_RIGHT &trans &trans
                            &trans       &trans       &trans                    &trans       &trans       &trans
             >;
         };
