@@ -1,56 +1,146 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * Copyright 2019 @foostan
+ * Copyright 2020 Drashna Jaelre <@drashna>
+ * ZMK Conversion by AI Assistant
  *
- * SPDX-License-Identifier: MIT
+ * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/bt.h> // Include if needed for Bluetooth commands potentially used elsewhere
+#include <dt-bindings/zmk/outputs.h> // Include if needed for output commands potentially used elsewhere
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+    // Define behaviors for QMK LT/MT shortcuts for clarity
+    behaviors {
+        // LALT_T(KC_TAB) -> &mt LALT TAB
+        lt_lalttab: mod_tap_lalt_tab {
+            compatible = "zmk,behavior-mod-tap";
+            label = "LALT_TAB";
+            bindings = <&kp LALT>, <&kp TAB>;
+            #binding-cells = ;
+            tapping-term-ms = ; // Adjust as needed
+            // flavor = "tap-preferred"; // Or "hold-preferred"
         };
+
+        // LALT_T(KC_EQL) -> &mt LALT EQL
+        lt_lalteql: mod_tap_lalt_eql {
+            compatible = "zmk,behavior-mod-tap";
+            label = "LALT_EQL";
+            bindings = <&kp LALT>, <&kp EQL>;
+            #binding-cells = ;
+            tapping-term-ms = ;
+        };
+
+        // LT(_NAV, KC_ESC) -> &lt NAV ESC
+        lt_navesc: layer_tap_nav_esc {
+            compatible = "zmk,behavior-layer-tap";
+            label = "NAV_ESC";
+            bindings = <&mo NAV>, <&kp ESC>;
+            #binding-cells = ;
+            tapping-term-ms = ;
+        };
+
+        // LT(_NAV, KC_SCLN) -> &lt NAV SCLN
+        lt_navscln: layer_tap_nav_scln {
+            compatible = "zmk,behavior-layer-tap";
+            label = "NAV_SCLN";
+            bindings = <&mo NAV>, <&kp SCLN>;
+            #binding-cells = ;
+            tapping-term-ms = ;
+        };
+
+        // LT(_SYMB, KC_BSLS) -> &lt SYMB BSLH
+        lt_symbbsls: layer_tap_symb_bsls {
+            compatible = "zmk,behavior-layer-tap";
+            label = "SYMB_BSLS";
+            bindings = <&mo SYMB>, <&kp BSLH>;
+            #binding-cells = ;
+            tapping-term-ms = ;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap"; // Ensure this matches your board's compatible string if needed
+
+        // Layer names corresponding to QMK defines
+        // _QWERTY = 0
+        // _LOCK1 = 1
+        // _SYMB = 2
+        // _NAV = 3
+        // _ADJUST = 4
+
+        default_layer = ; // Corresponds to _QWERTY
+
+        layer_0 { // _QWERTY
+            label = "QWERTY";
+            bindings = <
+    // Left Hand                                                             // Right Hand
+    &lt_lalttab  &kp Q        &kp W        &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O        &kp P        &lt_lalteql
+    &lt_navesc   &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt_navscln  &kp SQT    // SQT is ' (KC_QUOT)
+    &mo SYMB     &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt_symbbsls // FSLH is / (KC_SLSH)
+                           &kp LCTRL    &kp LSHIFT   &kp LGUI                  &kp BSPC     &kp SPACE    &kp RET      // LGUI is Left Win/Cmd
+            >;
+        };
+
+        layer_1 { // _LOCK1
+            label = "LOCK1";
+            bindings = <
+    // Left Hand                                                             // Right Hand
+    &to QWERTY   &kp EXCL     &kp N1       &kp N2       &kp N3       &kp UNDS     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
+    &lt_navesc   &kp AT       &kp N4       &kp N5       &kp N6       &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+    &trans       &trans       &kp N7       &kp N8       &kp N9       &mkp MB2     &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
+                           &kp N0       &trans       &trans                    &trans       &trans       &kp N0
+            >;
+        };
+
+        layer_2 { // _SYMB
+            label = "SYMB";
+            bindings = <
+    // Left Hand                                                             // Right Hand
+    &trans       &kp F18      &uc 0x00F6   &uc 0x00EB   &kp AMPS     &kp UNDS     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
+                            /* UCO1/ö */ /* UCE1/ë */ /* NOTE: QMK XP() behavior (tap/hold) not directly mapped */
+    &mo ADJUST   &kp AT       &trans       &mkp MOUSE_UP &trans       &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+    &trans       &kp F19      &mkp MOUSE_L &mkp MOUSE_D &mkp MOUSE_R &mkp MB2     &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
+                           &trans       &trans       &trans                    &trans       &trans       &kp N0
+            >;
+        };
+
+        layer_3 { // _NAV
+            label = "NAV";
+            bindings = <
+    // Left Hand                                                             // Right Hand
+    &to LOCK1    &kp C_WWW_BACK &kp C_WWW_FORWARD &kp LPAR   &kp RPAR     &trans       &kp HOME     &kp PGDN     &kp PGUP     &kp C_WWW_FAVORITES &kp END   &trans
+    &trans       &kp LALT     &kp PSCRN    &kp LCBR      &kp RCBR      &kp UNDS     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &mkp MB3     &trans
+    &mo ADJUST   &trans       &kp DEL      &kp LBRC      &kp RBRC      &trans       &mkp SCROLL_LEFT &mkp SCROLL_DOWN &mkp SCROLL_UP &mkp SCROLL_RIGHT &trans &trans
+                           &trans       &trans       &trans                    &trans       &trans       &trans
+            >;
+        };
+
+        layer_4 { // _ADJUST
+            label = "ADJUST";
+            bindings = <
+    // Left Hand                                                             // Right Hand
+    &trans       &trans       &rgb_ug RGB_EFR &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUD &kp C_VOLUME_DOWN &kp F1    &kp F2       &kp F3       &kp C_VOLUME_UP &trans
+    &trans       &trans       &trans       &trans       &trans       &trans       &kp C_PREV   &kp F4       &kp F5       &kp F6       &kp C_NEXT   &trans
+    &trans       &trans       &trans       &trans       &trans       &trans       &trans       &kp F7       &kp F8       &kp F9       &kp C_PLAY_PAUSE &trans
+                           &trans       &trans       &trans                    &kp F10      &kp F11      &kp F12
+            >;
+        };
+    };
+
+    // Macros would be defined here if KC_WIN_TAB or MACRO_PTT logic was known
+    // e.g.,
+    // macros {
+    //     win_tab: win_tab_macro {
+    //         compatible = "zmk,behavior-macro";
+    //         label = "MACRO_WIN_TAB";
+    //         #binding-cells = ;
+    //         bindings = <&macro_press &kp LGUI>, <&macro_tap &kp TAB>, <&macro_release &kp LGUI>;
+    //     };
+    // };
+    // Then use '&win_tab' in the keymap where KC_WIN_TAB was.
 };
