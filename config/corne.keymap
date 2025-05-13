@@ -41,7 +41,7 @@
             bindings = <
     // Left Hand                                                             // Right Hand
     &to 0   &kp EXCL     &kp N1       &kp N2       &kp N3       &kp UNDS     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
-    &lt_navesc   &kp AT       &kp N4       &kp N5       &kp N6       &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+    &lt 3 ESC   &kp AT       &kp N4       &kp N5       &kp N6       &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
     &trans       &trans       &kp N7       &kp N8       &kp N9       &mkp MB2     &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
                            &kp N0       &trans       &trans                    &trans       &trans       &kp N0
             >;
