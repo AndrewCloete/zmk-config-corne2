@@ -30,9 +30,9 @@
             bindings = <
     // Left Hand                                                             // Right Hand
     &mt LALT TAB  &kp Q        &kp W        &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O        &kp P        &mt LALT EQL
-    &lt 3 ESC    &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt 3 SCLN  &kp SQT    // SQT is ' (KC_QUOT)
-    &mo 2        &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt 3 BSLH // FSLH is / (KC_SLSH)
-                           &kp LCTRL    &kp LSHIFT   &kp LGUI                  &kp BSPC     &kp SPACE    &kp RET      // LGUI is Left Win/Cmd
+    &lt 3 ESC    &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt 3 SCLN  &kp SQT
+    &mo 2        &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt 3 BSLH
+                           &kp LCTRL    &kp LSHIFT   &kp LGUI                  &kp BSPC     &kp SPACE    &kp RET
             >;
         };
 
