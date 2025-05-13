@@ -21,7 +21,7 @@
             compatible = "zmk,behavior-mod-tap";
             label = "LALT_TAB";
             bindings = <&kp LALT>, <&kp TAB>;
-            #binding-cells = ;
+            #binding-cells = <0>;
             tapping-term-ms = ; // Adjust as needed
             // flavor = "tap-preferred"; // Or "hold-preferred"
         };
@@ -31,7 +31,7 @@
             compatible = "zmk,behavior-mod-tap";
             label = "LALT_EQL";
             bindings = <&kp LALT>, <&kp EQL>;
-            #binding-cells = ;
+            #binding-cells = <0>;
             tapping-term-ms = ;
         };
 
@@ -40,7 +40,7 @@
             compatible = "zmk,behavior-layer-tap";
             label = "NAV_ESC";
             bindings = <&mo NAV>, <&kp ESC>;
-            #binding-cells = ;
+            #binding-cells = <0>;
             tapping-term-ms = ;
         };
 
@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-layer-tap";
             label = "NAV_SCLN";
             bindings = <&mo NAV>, <&kp SCLN>;
-            #binding-cells = ;
+            #binding-cells = <0>;
             tapping-term-ms = ;
         };
 
@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-layer-tap";
             label = "SYMB_BSLS";
             bindings = <&mo SYMB>, <&kp BSLH>;
-            #binding-cells = ;
+            #binding-cells = <0>;
             tapping-term-ms = ;
         };
     };
