@@ -22,7 +22,7 @@
             label = "LALT_TAB";
             bindings = <&kp LALT>, <&kp TAB>;
             #binding-cells = <0>;
-            tapping-term-ms = ; // Adjust as needed
+            tapping-term-ms = 120; 
             // flavor = "tap-preferred"; // Or "hold-preferred"
         };
 
@@ -32,7 +32,7 @@
             label = "LALT_EQL";
             bindings = <&kp LALT>, <&kp EQL>;
             #binding-cells = <0>;
-            tapping-term-ms = ;
+            tapping-term-ms = 120;
         };
 
         // LT(_NAV, KC_ESC) -> &lt NAV ESC
@@ -41,7 +41,7 @@
             label = "NAV_ESC";
             bindings = <&mo NAV>, <&kp ESC>;
             #binding-cells = <0>;
-            tapping-term-ms = ;
+            tapping-term-ms = 120;
         };
 
         // LT(_NAV, KC_SCLN) -> &lt NAV SCLN
@@ -50,7 +50,7 @@
             label = "NAV_SCLN";
             bindings = <&mo NAV>, <&kp SCLN>;
             #binding-cells = <0>;
-            tapping-term-ms = ;
+            tapping-term-ms = 120;
         };
 
         // LT(_SYMB, KC_BSLS) -> &lt SYMB BSLH
@@ -59,7 +59,7 @@
             label = "SYMB_BSLS";
             bindings = <&mo SYMB>, <&kp BSLH>;
             #binding-cells = <0>;
-            tapping-term-ms = ;
+            tapping-term-ms = 120;
         };
     };
 
@@ -73,9 +73,7 @@
         // _NAV = 3
         // _ADJUST = 4
 
-        default_layer = ; // Corresponds to _QWERTY
-
-        layer_0 { // _QWERTY
+        default_layer { // _QWERTY
             label = "QWERTY";
             bindings = <
     // Left Hand                                                             // Right Hand
