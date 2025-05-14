@@ -13,19 +13,26 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
     &mt LALT TAB  &kp Q        &kp W        &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O        &kp P        &mt LALT EQL
-    &lt 2 ESC    &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt 2 SCLN  &kp SQT
+    &lt 3 ESC    &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &lt 3 SCLN  &kp SQT
     &mo 2        &kp Z        &kp X        &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &lt 3 BSLH
                            &kp LCTRL    &kp LSHIFT   &kp LGUI                  &kp BSPC     &kp SPACE    &kp RET
 
                         >;
                 };
+
+
+        layer_1 {
+            bindings = <
+    &mo 0       &kp EXCL     &kp N1       &kp N2       &kp N3       &kp UNDS     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
+    &trans      &kp AT       &kp N4       &kp N5       &kp N6       &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+    &trans       &trans       &kp N7       &kp N8       &kp N9       &mkp MB2     &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
+                           &kp N0       &trans       &trans                    &trans       &trans       &kp N0
+            >;
+        };
+
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
