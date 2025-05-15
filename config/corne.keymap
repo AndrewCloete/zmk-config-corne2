@@ -36,7 +36,7 @@
                 // Symbols
                 layer_2 {
                         bindings = <
-   &trans       &kp F18      &kp F17        &kp F20        &kp AMPS        &kp UNDS     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
+   &trans       &kp F18      &kp F17        &kp F20        &kp AMPS        &kp UNDER     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
                              &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
