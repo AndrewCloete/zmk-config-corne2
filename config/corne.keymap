@@ -37,18 +37,11 @@
                 layer_2 {
                         bindings = <
    &trans       &kp F18      &kp F17        &kp F20        &kp AMPS        &kp UNDER     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &mo 4        &kp AT       &trans         &mmv MOVE_UP   &trans          &mkp MB1      &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+   &trans       &kp F19      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp MB2      &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
+                                            &trans         &trans          &trans        &trans       &trans       &kp N0
                         >;
                 };
-   //                      bindings = <
-   // &trans       &kp F18      &kp F17        &kp F20        &kp AMPS        &kp UNDS     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
-   // &mo 4        &kp AT       &trans         &mmv MOVE_UP   &trans          &mkp MB1     &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
-   // &trans       &kp F19      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp MB2     &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
-   //                                          &trans         &trans          &trans       &trans       &trans       &kp N0
-   //                      >;
-   //              };
 
                 // Navigation 
                 layer_3 {
