@@ -68,7 +68,7 @@
                         bindings = <
     &tog 1  &kp K_BACK   &kp K_FORWARD &kp LPAR      &kp RPAR      &trans       &kp HOME         &kp PGDN       &kp PGUP       &trans          &kp END      &trans
     &trans  &kp LALT     &kp PSCRN     &kp LBRC      &kp RBRC      &kp UNDER    &kp LEFT         &kp DOWN       &kp UP         &kp  RIGHT      &mkp MB3     &trans
-    &mo 4   &trans       &kp DEL       &kp LBKT      &kp RBKT      &trans       &msc SCRL_LEFT   &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_RIGHT &trans       &trans
+    &mo 4   &trans       &kp DEL       &kp LBKT      &kp RBKT      &trans       &msc SCRL_RIGHT   &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_LEFT &trans       &trans
                                        &trans        &trans        &trans       &trans           &trans         &trans
                         >;
                 };
