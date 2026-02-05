@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 40    // default: 10
 
 #include <dt-bindings/zmk/pointing.h>
 
@@ -56,10 +56,10 @@
                 // Symbols
                 layer_2 {
                         bindings = <
-   &trans       &kp F18      &kp F17        &kp F20        &kp AMPS        &kp UNDER     &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
-   &mo 4        &kp AT       &kp F21        &mmv MOVE_UP   &trans          &mkp MB1      &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
-   &trans       &kp F19      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp MB2      &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
-                                            &trans         &trans          &trans        &trans       &trans       &kp N0
+   &trans       &kp F18      &kp F17        &kp F20        &kp AMPS        &kp UNDER      &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
+   &mo 4        &kp AT       &kp F21        &mmv MOVE_UP   &trans          &msc SCRL_DOWN &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+   &trans       &kp F19      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_UP   &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
+                                            &trans         &trans          &trans         &mkp MB1     &mkp MB2     &kp N0
                         >;
                 };
 
@@ -68,7 +68,7 @@
                         bindings = <
     &tog 1  &kp K_BACK   &kp K_FORWARD &kp LPAR      &kp RPAR      &trans       &kp HOME         &kp PGDN       &kp PGUP       &trans          &kp END      &trans
     &trans  &kp LALT     &kp PSCRN     &kp LBRC      &kp RBRC      &kp UNDER    &kp LEFT         &kp DOWN       &kp UP         &kp  RIGHT      &mkp MB3     &trans
-    &mo 4   &trans       &kp DEL       &kp LBKT      &kp RBKT      &trans       &msc SCRL_RIGHT   &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_LEFT &trans       &trans
+    &mo 4   &trans       &kp DEL       &kp LBKT      &kp RBKT      &trans       &msc SCRL_RIGHT  &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_LEFT  &trans       &trans
                                        &trans        &trans        &trans       &trans           &trans         &trans
                         >;
                 };
