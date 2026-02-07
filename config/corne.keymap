@@ -57,7 +57,7 @@
                 layer_2 {
                         bindings = <
    &trans       &kp F18      &kp F17        &kp F20        &kp AMPS        &kp UNDER      &kp CARET    &kp N1       &kp N2       &kp N3       &kp DLLR     &kp MINUS
-   &mo 4        &kp AT       &kp F21        &mmv MOVE_UP   &trans          &msc SCRL_DOWN &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
+   &mo 4        &kp AT       &kp F21        &mmv MOVE_UP   &mkp MB4        &msc SCRL_DOWN &kp HASH     &kp N4       &kp N5       &kp N6       &kp ASTRK    &kp GRAVE
    &trans       &kp F19      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_UP   &kp PRCNT    &kp N7       &kp N8       &kp N9       &kp TILDE    &kp EXCL
                                             &trans         &trans          &trans         &mkp MB1     &mkp MB2     &kp N0
                         >;
