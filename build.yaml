@@ -19,11 +19,11 @@
 #
 ---
 include:
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: corne_left
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: corne_right
-  - board: sparkfun_pro_micro_rp2040
+  - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_left
-  - board: sparkfun_pro_micro_rp2040
+  - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_right
