@@ -23,3 +23,7 @@ include:
     shield: corne_left
   - board: nice_nano
     shield: corne_right
+  - board: adafruit_kb2040
+    shield: corne_left
+  - board: adafruit_kb2040
+    shield: corne_right
