@@ -28,6 +28,6 @@ include:
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_right
   - board: adafruit_kb2040//zmk
-    shield: corne_left_ada
+    shield: corne_left
   - board: adafruit_kb2040//zmk
-    shield: corne_right_ada
+    shield: corne_right
